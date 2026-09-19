@@ -1,6 +1,8 @@
 import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
-
+import routes from './app/routes';
+import globalErrorHandler from './errors/globalErrorHandler';
+import notFound from './middleware/notFound';
 const app: Application = express();
 
 // Middleware
@@ -15,7 +17,8 @@ app.get('/', (req: Request, res: Response) => {
     message: 'IELTS App server is running 🚀',
   });
 });
-
-// TODO: এখানে পরে সব module routes মাউন্ট হবে (router.use('/api/v1', routes))
+app.use('/api/v1',routes);
+app.use(globalErrorHandler);
+app.use(notFound);
 
 export default app;
