@@ -7,4 +7,18 @@ export default {
   env: process.env.NODE_ENV,
   port: process.env.PORT || 5000,
   database_url: process.env.DATABASE_URL,
+  
+  bcrypt_salt_rounds: Number(process.env.BCRYPT_SALT_ROUNDS) || 12,
+  jwt: {
+    secret: process.env.JWT_SECRET,
+    expires_in: process.env.JWT_EXPIRES_IN,
+    refresh_secret: process.env.JWT_REFRESH_SECRET,
+    refresh_expires_in: process.env.JWT_REFRESH_EXPIRES_IN,
+  },
+  stripe:{
+    secret_key: process.env.STRIPE_SECRET_KEY,
+    webhook_secret: process.env.STRIPE_WEBHOOK_SECRET,
+    success_url: process.env.STRIPE_SUCCESS_URL,
+    cancel_url: process.env.STRIPE_CANCEL_URL,
+  }
 };

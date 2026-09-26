@@ -1,7 +1,7 @@
 import { ErrorRequestHandler } from 'express';
 import mongoose from 'mongoose';
 import config from '../app/config';
-import ApiError from './ApiError';
+import ApiError from './AppError';
 import handleValidationError from '../errors/handleValidationError';
 import { IGenericErrorMessage } from '../interface/error';
 

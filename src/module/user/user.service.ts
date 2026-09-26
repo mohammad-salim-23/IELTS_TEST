@@ -1,4 +1,4 @@
-import ApiError from '../../errors/ApiError';
+import ApiError from '../../errors/AppError';
 import { IUser } from './user.interface';
 import { User } from './user.model';
 
